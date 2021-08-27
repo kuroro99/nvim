@@ -1,80 +1,21 @@
 local config = {}
 
-function config.galaxyline()
-  require('modules.ui.eviline')
+function config.nerd_tree()
+  vim.g.NERDTreeMinimalUI = 1
+  vim.g.NERDTreeDirArrows = 1
+  vim.g.NERCTreeHijackNetrw = 0
+  --vim.g.NERDTreeIgnore = {'\.o$','\.O$'}
+  vim.g.NERDTreeShowLineNumbers=1
 end
 
-function config.nvim_bufferline()
-  require('bufferline').setup{
-    options = {
-      modified_icon = '✥',
-      buffer_close_icon = '',
-      mappings = true,
-      always_show_bufferline = false,
-    }
-  }
+function config.vim_easymotion()
+  vim.g.EasyMotion_startofline = 0
 end
 
-function config.dashboard()
-  local home = os.getenv('HOME')
-  vim.g.dashboard_footer_icon = '🐬 '
-  vim.g.dashboard_preview_command = 'cat'
-  vim.g.dashboard_preview_pipeline = 'lolcat -F 0.3'
-  vim.g.dashboard_preview_file = home .. '/.config/nvim/static/neovim.cat'
-  vim.g.dashboard_preview_file_height = 12
-  vim.g.dashboard_preview_file_width = 80
-  vim.g.dashboard_default_executive = 'telescope'
-  vim.g.dashboard_custom_section = {
-    last_session = {
-      description = {'  Recently laset session                  SPC s l'},
-      command =  'SessionLoad'},
-    find_history = {
-      description = {'  Recently opened files                   SPC f h'},
-      command =  'DashboardFindHistory'},
-    find_file  = {
-      description = {'  Find  File                              SPC f f'},
-      command = 'Telescope find_files find_command=rg,--hidden,--files'},
-    new_file = {
-     description = {'  File Browser                            SPC f b'},
-     command =  'Telescope file_browser'},
-    find_word = {
-     description = {'  Find  word                              SPC f w'},
-     command = 'DashboardFindWord'},
-    find_dotfiles = {
-     description = {'  Open Personal dotfiles                  SPC f d'},
-     command = 'Telescope dotfiles path=' .. home ..'/.dotfiles'},
-    go_source = {
-     description = {'  Find Go Source Code                     SPC f s'},
-     command = 'Telescope gosource'},
-  }
+function config.vim_choosewin()
 end
 
-function config.nvim_tree()
-  -- On Ready Event for Lazy Loading work
-  require("nvim-tree.events").on_nvim_tree_ready(
-    function()
-      vim.cmd("NvimTreeRefresh")
-    end
-  )
-  vim.g.nvim_tree_follow = 1
-  vim.g.nvim_tree_hide_dotfiles = 1
-  vim.g.nvim_tree_indent_markers = 1
-  vim.g.nvim_tree_bindings = {
-    ["l"] = ":lua require'nvim-tree'.on_keypress('edit')<CR>",
-    ["s"] = ":lua require'nvim-tree'.on_keypress('vsplit')<CR>",
-    ["i"] = ":lua require'nvim-tree'.on_keypress('split')<CR>",
-  }
-  vim.g.nvim_tree_icons = {
-    default =  '',
-    symlink =  '',
-    git = {
-     unstaged = "✚",
-     staged =  "✚",
-     unmerged =  "≠",
-     renamed =  "≫",
-     untracked = "★",
-    },
-  }
+function config.nerdcommenter()
 end
 
 function config.gitsigns()
@@ -154,6 +95,19 @@ function config.indent_blakline()
   }
   -- because lazy load indent-blankline so need readd this autocmd
   vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
+end
+
+function config.vim_airline()
+  vim.g.airline_left_sep = ''
+  vim.g.airline_left_alt_sep = ''
+  vim.g.airline_right_sep = ''
+  vim.g.airline_right_alt_sep = ''
+  vim.g.airline_powerline_fonts = 0
+  vim.g.airline_exclude_preview = 1
+  vim.g.airline_section_b = '%n'
+  vim.g['airline#extensions#vista#enabled'] = 1
+  vim.g['airline#extensions#branch#enabled'] = 1
+  vim.g['airline#extensions#syntastic#enabled'] = 1
 end
 
 return config

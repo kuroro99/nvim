@@ -13,15 +13,13 @@ end
 local function load_options()
   local global_local = {
     termguicolors  = true;
-    mouse          = "nv";
-    errorbells     = true;
-    visualbell     = true;
+    errorbells     = false;
+    visualbell     = false;
     hidden         = true;
     fileformats    = "unix,mac,dos";
-    magic          = true;
     virtualedit    = "block";
     encoding       = "utf-8";
-    viewoptions    = "folds,cursor,curdir,slash,unix";
+    viewoptions    = "folds,cursor,curdir";
     sessionoptions = "curdir,help,tabpages,winsize";
     clipboard      = "unnamedplus";
     wildignorecase = true;
@@ -49,9 +47,8 @@ local function load_options()
     smartcase      = true;
     infercase      = true;
     incsearch      = true;
-    wrapscan       = true;
-    complete       = ".,w,b,k";
     inccommand     = "nosplit";
+  -- grep setting
     grepformat     = "%f:%l:%c:%m";
     grepprg        = 'rg --hidden --vimgrep --smart-case --';
     breakat        = [[\ \	;:,!?]];
@@ -64,7 +61,7 @@ local function load_options()
     diffopt        = "filler,iwhite,internal,algorithm:patience";
     completeopt    = "menuone,noselect";
     jumpoptions    = "stack";
-    showmode       = false;
+    showmode       = true;
     shortmess      = "aoOTIcF";
     scrolloff      = 2;
     sidescrolloff  = 5;
@@ -77,7 +74,7 @@ local function load_options()
     pumheight      = 15;
     helpheight     = 12;
     previewheight  = 12;
-    showcmd        = false;
+    showcmd        = true;
     cmdheight      = 2;
     cmdwinheight   = 5;
     equalalways    = false;

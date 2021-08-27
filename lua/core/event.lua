@@ -15,23 +15,9 @@ end
 
 function autocmd.load_autocmds()
   local definitions = {
-    packer = {
-      {"BufWritePost","*.lua","lua require('core.pack').auto_compile()"};
-    },
-    bufs = {
-      -- Reload vim config automatically
-      {"BufWritePost",[[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]]};
-      -- Reload Vim script automatically if setlocal autoread
-      {"BufWritePost,FileWritePost","*.vim", [[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]]};
-      {"BufWritePre","/tmp/*","setlocal noundofile"};
-      {"BufWritePre","COMMIT_EDITMSG","setlocal noundofile"};
-      {"BufWritePre","MERGE_MSG","setlocal noundofile"};
-      {"BufWritePre","*.tmp","setlocal noundofile"};
-      {"BufWritePre","*.bak","setlocal noundofile"};
-      {"BufWritePre","*.tsx","lua vim.api.nvim_command('Format')"};
-      {"BufWritePre","*.go","lua require('internal.golines').golines_format()"};
-    };
-
+    --my_colorscheme = {
+      --{"vimenter", "*", "hi Normal guibg=NONE ctermbg=NONE"}
+    --};
     wins = {
       -- Highlight current line only on focused window
       {"WinEnter,BufEnter,InsertLeave", "*", [[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]]};
@@ -43,12 +29,6 @@ function autocmd.load_autocmds()
       -- Check if file changed when its window is focus, more eager than 'autoread'
       {"FocusGained", "* checktime"};
     };
-
-    ft = {
-      {"FileType", "dashboard", "set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2"};
-      {"BufNewFile,BufRead","*.toml"," setf toml"},
-    };
-
     yank = {
       {"TextYankPost", [[* silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=400})]]};
     };
