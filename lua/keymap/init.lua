@@ -28,9 +28,6 @@ local plug_map = {
     --["n|<Leader>ft"]     = map_cu('Telescope help_tags'):with_noremap():with_silent(),
     --["n|<Leader>fd"]     = map_cu('Telescope dotfiles path='..os.getenv("HOME")..'/.dotfiles'):with_noremap():with_silent(),
     --["n|<Leader>fs"]     = map_cu('Telescope gosource'):with_noremap():with_silent(),
-    ---- Plugin acceleratedjk
-    ["n|j"]              = map_cmd('v:lua.enhance_jk_move("j")'):with_silent():with_expr(),
-    ["n|k"]              = map_cmd('v:lua.enhance_jk_move("k")'):with_silent():with_expr(),
     ---- Plugin vim-easymotion
     ["n|<space>j"]       = map_cmd("<Plug>(easymotion-j)"),
     ["n|<space>k"]       = map_cmd("<Plug>(easymotion-k)"),

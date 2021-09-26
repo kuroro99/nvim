@@ -32,6 +32,9 @@ function autocmd.load_autocmds()
     yank = {
       {"TextYankPost", [[* silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=400})]]};
     };
+    transparent = {
+      {"vimenter", [[* hi Normal guibg=NONE ctermbg=NONE]]};
+    };
   }
 
   autocmd.nvim_create_augroups(definitions)

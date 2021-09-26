@@ -77,7 +77,7 @@ local function load_options()
     showcmd        = true;
     cmdheight      = 2;
     cmdwinheight   = 5;
-    equalalways    = false;
+    equalalways    = true;
     laststatus     = 2;
     display        = "lastline";
     showbreak      = "↳  ";
@@ -105,6 +105,7 @@ local function load_options()
     signcolumn     = "yes";
     conceallevel   = 2;
     concealcursor  = "niv";
+    guifont        = "Cascadia\\ Code\\ PL:6",
   }
 
   if global.is_mac then
