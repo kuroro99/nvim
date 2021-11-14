@@ -11,4 +11,9 @@ lang['nvim-treesitter/nvim-treesitter-textobjects'] = {
   after = 'nvim-treesitter'
 }
 
+lang['lervag/vimtex'] = {
+  cmd = 'call vimtex#init()',
+  config = conf.vimtex,
+}
+
 return lang
