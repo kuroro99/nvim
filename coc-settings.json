@@ -8,7 +8,14 @@
         "rust":{
             "command": "rust-analyzer",
             "filetypes": ["rust"],
-            "rootPatterns": ["Cargo.toml"]
+            "rootPatterns": ["Cargo.toml"],
+            "settings": {
+                "rust-analyzer": {
+                    "checkOnSave": {
+                        "enable": false
+                    }
+                }
+            }
         }
     },
     "diagnostic.enable": false
