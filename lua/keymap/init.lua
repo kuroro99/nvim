@@ -7,6 +7,7 @@ require('keymap.config')
 
 local plug_map = {
     ---- Plugin nvim-tree
+    --["i|<C-o>"]          = map_cmd('v:lua.smart_tab()'):with_expr():with_silent(),
     ["n|<space>nt"]      = map_cr('NERDTreeToggle'):with_noremap():with_silent(),
     ---- Plugin Floaterm
     --["n|<A-d>"]          = map_cu('Lspsaga open_floaterm'):with_noremap():with_silent(),
@@ -43,5 +44,4 @@ local plug_map = {
     ---- Plugin Vista
     ["n|<Leader>v"]    = map_cr('Vista!!'):with_noremap():with_silent()
 };
-
 bind.nvim_load_mapping(plug_map)

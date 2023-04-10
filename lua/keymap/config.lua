@@ -66,3 +66,13 @@ _G.enhance_nice_block = function (key)
   }
   return t(map[key])
 end
+
+function _G.smart_tab()
+  print(vim.fn.pumvisible())
+  if vim.fn.pumvisible() == 0 then
+    return t "<C-n>" 
+  else
+    return t "<C-y>"
+  end
+end
+

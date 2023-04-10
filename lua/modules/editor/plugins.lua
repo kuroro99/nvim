@@ -6,4 +6,7 @@ editor['itchyny/vim-cursorword'] = {
   config = conf.vim_cursorwod
 }
 
+editor['zalgo3/vim-chatgpt'] = {
+  branch = "nvim"
+}
 return editor

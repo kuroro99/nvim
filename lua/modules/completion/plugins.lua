@@ -17,7 +17,9 @@ completion['nvim-telescope/telescope.nvim'] = {
 }
 
 completion['neoclide/coc.nvim'] = {
-  branch = 'release'
+  commit = "03c9add7cd867a013102dcb45fb4e75304d227d7"
 }
+
+
 
 return completion

@@ -105,6 +105,7 @@ local function load_options()
     signcolumn     = "yes";
     conceallevel   = 2;
     concealcursor  = "niv";
+    mouse          = " ";
     guifont        = "Cascadia\\ Code\\ PL:6",
   }
 
