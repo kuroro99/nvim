@@ -22,3 +22,6 @@ sudo add-apt-repository ppa:neovim-ppa/stable
 
 sudo apt install neovim 
 
+## Coc插件
+python补全：CocInstall coc-pyright
+
